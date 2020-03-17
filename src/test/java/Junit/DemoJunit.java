@@ -48,6 +48,34 @@ public void test2() {
 	WebElement password = driver.findElement(By.id("pass"));
 	password.sendKeys("password");
 	
+	Assert.assertEquals("password",password.getAttribute("value"));
+	
+	WebElement button = driver.findElement(By.xpath("//label[@id='loginbutton']"));
+	button.click();
+	}
+@Test
+public void test3() {
+	driver.get("https://facebook.com/");
+	WebElement email = driver.findElement(By.id("email"));
+	email.sendKeys("mustag.s.ahmed@gmail.com ");
+	
+	WebElement password = driver.findElement(By.id("pass"));
+	password.sendKeys("12345678");
+	
+	WebElement button = driver.findElement(By.xpath("//label[@id='loginbutton']"));
+	button.click();
+		
+	}
+
+@Test
+public void test4() {
+	driver.get("https://facebook.com/");
+	WebElement email = driver.findElement(By.id("email"));
+	email.sendKeys("12345678");
+	
+	WebElement password = driver.findElement(By.id("pass"));
+	password.sendKeys("password");
+	
 	Assert.assertEquals("passwords",password.getAttribute("value"));
 	
 	WebElement button = driver.findElement(By.xpath("//label[@id='loginbutton']"));

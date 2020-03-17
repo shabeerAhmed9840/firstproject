@@ -34,9 +34,11 @@ public class SuiteA {
 		
 		WebElement button = driver.findElement(By.xpath("//label[@id='loginbutton']"));
 		button.click();
+		 
 		
 		Assert.assertTrue(driver.getCurrentUrl().equals("https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&lwv=110"));	
-		}
+		System.out.println("test pass");
+	}
 
 	@Test
 	public void test4() {
@@ -46,8 +48,9 @@ public class SuiteA {
 		
 		WebElement password = driver.findElement(By.id("pass"));
 		password.sendKeys("password");
+		System.out.println("test 4");
 		
-		Assert.assertEquals("passwords",password.getAttribute("value"));
+		Assert.assertEquals("passwod",password.getAttribute("value"));
 		
 		WebElement button = driver.findElement(By.xpath("//label[@id='loginbutton']"));
 		button.click();
